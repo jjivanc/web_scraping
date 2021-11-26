@@ -1,0 +1,25 @@
+#from selenium import webdriver
+#from bs4 import BeautifulSoup
+#import time
+from selenium.webdriver.firefox.options import Options
+
+options = Options()
+options.headless = True
+driver = webdriver.Firefox(options=options, executable_path=r'C:\Utility\BrowserDrivers\geckodriver.exe')
+
+
+def pegarneox():
+	browser = webdriver.Firefox()
+	browser.get('https://neoxscans.net/')
+	page_source = browser.page_source
+	soup = BeautifulSoup(page_source, 'html.parser')
+	pageList = soup.find_all('div', class_='col-6 col-md-3 badge-pos-2')
+	lista = []
+	for res in pageList:
+		lista.append(res.select_one("img")["data-src"])
+		time.sleep(1)
+		print(f"\nFound total shoes: {len(pageList)}")
+		#print(pageList)
+		#print(links)
+		#print(lista)
+	browser.quit()

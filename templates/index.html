@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/mainpage.css') }}">
+	<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/reset.css') }}">
+
+</head>
+<body>
+	<div class="card">
+		<div class="content-item">
+			{% for namel in name %}
+				<div class="item"><a><img src={{ namel['Link']}}>
+				<h4>{{ namel['Titulo'] }}</h4>
+				</a></div>
+			{% endfor %}
+		</div>
+	</div>
+</body>
+</html>

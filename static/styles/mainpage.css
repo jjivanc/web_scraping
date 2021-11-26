@@ -1,0 +1,23 @@
+
+.card {
+	background: #585454;
+	color: #FFF;
+	max-width: 80%;
+	margin: 0 auto;
+}
+.content-item{
+	display: flex;
+	flex-wrap: wrap;
+	margin: 10px;
+}
+.item {
+	margin: 1em;
+	width: 210px;
+  white-space: nowrap;
+  overflow: hidden;
+}
+img {
+	width: 205px;
+	height: 280px;
+	margin: 5px;
+}
